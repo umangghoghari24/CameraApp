@@ -1,13 +1,16 @@
 import 'package:cameraapp/main.dart';
 import 'package:flutter/material.dart';
 class Camera extends StatefulWidget {
-  const Camera({Key? key}) : super(key: key);
+   Camera({
+     Key? key}) : super(key: key);
 
   @override
   State<Camera> createState() => _CameraState();
 }
 
 class _CameraState extends State<Camera> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +21,9 @@ class _CameraState extends State<Camera> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 100,),
+            // Image.network('https://cdn.dribbble.com/users/2409752/screenshots/7070185/media/331c0fed4314abb0b7afd3a4b6b31ac1.jpg?resize=400x300&vertical=center',),
+            // Divider(thickness: 1,),
+            SizedBox(height: 50,),
             CircleAvatar(
               radius: 40,
               child: IconButton(onPressed: () {
@@ -27,9 +32,14 @@ class _CameraState extends State<Camera> {
                   icon: Icon(Icons.camera)),
             ),
             SizedBox(height: 30,),
-            Container(
-              color: Colors.grey,
-                child: Text('Click Camera Button'))
+            Container(width: MediaQuery.of(context).size.width-50,
+              color: Colors.white12,
+                child: Center(
+                    child: Text('Click Camera Button',style: TextStyle(
+                      color: Colors.black
+                    ),
+                    ),
+                ),)
           ],
         ),
       ),

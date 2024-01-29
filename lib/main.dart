@@ -16,8 +16,14 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,7 +44,8 @@ class MyApp extends StatelessWidget {
 //camera app
 
 class Cameraapp extends StatefulWidget {
-  const Cameraapp({Key? key}) : super(key: key);
+  const Cameraapp({
+    Key? key}) : super(key: key);
 
   @override
   State<Cameraapp> createState() => _CameraappState();
@@ -250,7 +257,6 @@ class _CameraappState extends State<Cameraapp> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(backgroundColor: currnetcamerastatus==1?Colors.grey.shade800:Colors.transparent,shape: StadiumBorder()),
-                        // child: Text('Video'),
                         onPressed: () {
                           setState(() {
                             currnetcamerastatus=1;
@@ -262,7 +268,6 @@ class _CameraappState extends State<Cameraapp> {
 
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(backgroundColor: currnetcamerastatus==2?Colors.grey.shade800:Colors.transparent,shape: StadiumBorder()),
-                        //   child: Text('Photo'),
                         onPressed: () {
                           setState(() {
                             currnetcamerastatus = 2;
