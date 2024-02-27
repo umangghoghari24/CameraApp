@@ -1,9 +1,11 @@
+import 'dart:io';
+
 import 'package:cameraapp/Camera.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:camera/camera.dart';
-
 import 'Cameraview.dart';
 
 
@@ -27,7 +29,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'WhatsApp',
+        title: 'CameraApp',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primarySwatch: Colors.green,
@@ -35,7 +37,6 @@ class _MyAppState extends State<MyApp> {
                 backgroundColor: Color(0xff128C7E)
             )
         ),
-
         home: Camera()
     );
   }
@@ -208,15 +209,16 @@ class _CameraappState extends State<Cameraapp> {
                     color: Colors.white,
                     size: 45,
                   ))),
-          
+
           Positioned(
               bottom: 68,
               left: 15,
-              child: Icon(
+            child:  Icon(
                 Icons.image,
                 color: Colors.white,
                 size: 32,
-              )),
+              )
+          ),
 
 
           // Positioned(

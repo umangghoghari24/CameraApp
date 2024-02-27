@@ -97,6 +97,7 @@ class _cameraviewState extends State<cameraview> {
                           CircleAvatar(
                             child: IconButton(onPressed: () {
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>Camera(
+
                               )));
 
                             },
